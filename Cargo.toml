@@ -1,23 +1,19 @@
 [package]
-name = "path"
-version = "0.1.0"
-edition.workspace = true
-publish.workspace = true
+name = "path-gpui-standalone"
+version = "1.12.0"
 license = "GPL-3.0-or-later"
+edition = "2024"
+description = "Standalone mirror of Zed's path crate."
+repository = "https://github.com/zed-industries/zed"
 
 [lib]
 path = "src/path.rs"
+name = "path"
 
 [features]
 test-support = []
 
 [dependencies]
-anyhow.workspace = true
-dunce.workspace = true
-serde = { workspace = true, optional = true }
-
-[dev-dependencies]
-tempfile.workspace = true
-
-[lints]
-workspace = true
+anyhow = "^1.0.86"
+dunce = "^1.0"
+serde = {version = "^1.0.221", features = ["derive", "rc"], optional = true}
